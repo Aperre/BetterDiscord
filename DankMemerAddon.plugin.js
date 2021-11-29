@@ -3,7 +3,7 @@
  * @displayName DankMemerHelper
  * @source https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js
  * @authorId 547077385225502736
- * @version 1.0.4
+ * @version 1.1
  */
  /*@cc_on
  @if (@_jscript)
@@ -380,10 +380,28 @@
   						navId: "invisible-typing-context-menu",
   						onClose: contextmenu_namespaceObject.closeContextMenu
   					}, external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
-  						id: "test",
-  						label: "Say Test",
+  						id: "beg",
+  						label: "Beg",
   						action: () => {
-  							ZLibrary.DiscordAPI.currentChannel.sendMessage("Test")
+  							ZLibrary.DiscordAPI.channels.find(channel.id).sendMessage("pls beg")
+  						}
+  					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
+  						id: "search",
+  						label: "Search",
+  						action: () => {
+  							ZLibrary.DiscordAPI.currentChannel.sendMessage("pls search")
+  						}
+  					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
+  						id: "fish",
+  						label: "Fish",
+  						action: () => {
+  							ZLibrary.DiscordAPI.currentChannel.sendMessage("pls fish")
+  						}
+  					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
+  						id: "postmeme",
+  						label: "Post Meme",
+  						action: () => {
+  							ZLibrary.DiscordAPI.currentChannel.sendMessage("pls pm")
   						}
   					}));
   				}
@@ -499,9 +517,7 @@
   						external_PluginApi_namespaceObject.Utilities.suppressErrors((() => {
   							this.patchTextAreaButtons();
   						}), "textarea buttons patch")();
-  						external_PluginApi_namespaceObject.Utilities.suppressErrors((() => {
-  							this.patchStartTyping();
-  						}), "start typing patch")();
+              const press = new KeyboardEvent("keydown", {key: "Enter", code: "Enter", which: 13, keyCode: 13, bubbles: true})
   					}
   					getSettingsPanel() {
   						return DankMemerAddon_React.createElement(SettingsPanel, null);
@@ -518,12 +534,6 @@
   								channel,
   								textValue
   							}));
-  						}));
-  					}
-  					async patchStartTyping() {
-  						const DankModule = external_PluginApi_namespaceObject.WebpackModules.getByProps("startTyping");
-  						external_PluginApi_namespaceObject.Patcher.instead(DankModule, "startTyping", ((_, [channelId], originalMethod) => {
-  							if (DankMemerAddonButton.getState(channelId)) originalMethod(channelId);
   						}));
   					}
   					onStop() {
