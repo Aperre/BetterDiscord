@@ -376,24 +376,14 @@
   				function DankMemerAddonContextMenu({
   					channelId
   				}) {
-  					const enabled = (0, flux_namespaceObject.useStateFromStores)([settings], (() => settings.get("autoEnable", true)));
   					return external_BdApi_React_default().createElement(contextmenu_namespaceObject.Menu, {
   						navId: "invisible-typing-context-menu",
   						onClose: contextmenu_namespaceObject.closeContextMenu
   					}, external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
-  						id: "globally-disable-or-enable-typing",
-  						label: enabled ? "Disable Globally" : "Enable Globally",
+  						id: "test",
+  						label: "Say Test",
   						action: () => {
   							settings.set("autoEnable", !enabled);
-  						}
-  					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
-  						color: "colorDanger",
-  						label: "Reset Config",
-  						disabled: !settings.get("exclude", []).length,
-  						id: "reset-config",
-  						action: () => {
-  							settings.set("exclude", []);
-  							external_PluginApi_namespaceObject.Toasts.success("Successfully reset config for all channels.");
   						}
   					}));
   				}
