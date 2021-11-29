@@ -3,7 +3,7 @@
  * @displayName DankMemerHelper
  * @source https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js
  * @authorId 547077385225502736
- * @version test
+ * @version 1.0.0
  */
  /*@cc_on
  @if (@_jscript)
