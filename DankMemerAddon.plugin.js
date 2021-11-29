@@ -3,7 +3,7 @@
  * @displayName DankMemerHelper
  * @source https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js
  * @authorId 547077385225502736
- * @version 1.0.1
+ * @version 1.0.2
  */
  /*@cc_on
  @if (@_jscript)
@@ -33,7 +33,7 @@
       "name": "DankMemerHelper",
       "authors": [{"name": "Ape", "github_username": "Aperre", "twitter_username": "ApeTheMonk", "discord_id": "226677096091484160"}],
       "description": "Adds Features That will help you with Dank Memer",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "github": "https://github.com/Aperre/BetterDiscord",
       "github_raw": "https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js"
     },
@@ -368,7 +368,7 @@
   					}) : null);
   				}
   				const contextmenu_namespaceObject = Modules["@discord/contextmenu"];
-  				const TypingModule = external_PluginApi_namespaceObject.WebpackModules.getByProps("startTyping");
+  				const DankModule = external_PluginApi_namespaceObject.WebpackModules.getByProps("startTyping");
   				const removeItem = function(array, item) {
   					while (array.includes(item)) array.splice(array.indexOf(item), 1);
   					return array;
@@ -383,7 +383,7 @@
   						id: "test",
   						label: "Say Test",
   						action: () => {
-  							settings.set("autoEnable", !enabled);
+  							sendMessage("Test")
   						}
   					}));
   				}
@@ -396,10 +396,10 @@
   						const excludeList = [...settings.get("exclude", [])];
   						if (excludeList.includes(channel.id)) {
   							removeItem(excludeList, channel.id);
-  							TypingModule.stopTyping(channel.id);
+  							DankModule.stopTyping(channel.id);
   						} else {
   							excludeList.push(channel.id);
-  							if (textValue) TypingModule.startTyping(channel.id);
+  							if (textValue) DankModule.startTyping(channel.id);
   						}
   						settings.set("exclude", excludeList);
   					}), [enabled]);
@@ -521,8 +521,8 @@
   						}));
   					}
   					async patchStartTyping() {
-  						const TypingModule = external_PluginApi_namespaceObject.WebpackModules.getByProps("startTyping");
-  						external_PluginApi_namespaceObject.Patcher.instead(TypingModule, "startTyping", ((_, [channelId], originalMethod) => {
+  						const DankModule = external_PluginApi_namespaceObject.WebpackModules.getByProps("startTyping");
+  						external_PluginApi_namespaceObject.Patcher.instead(DankModule, "startTyping", ((_, [channelId], originalMethod) => {
   							if (DankMemerAddonButton.getState(channelId)) originalMethod(channelId);
   						}));
   					}
