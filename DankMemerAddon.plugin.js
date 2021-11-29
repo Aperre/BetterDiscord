@@ -3,7 +3,7 @@
  * @displayName DankMemerHelper
  * @source https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js
  * @authorId 547077385225502736
- * @version 1.0.0
+ * @version 1.0.1
  */
  /*@cc_on
  @if (@_jscript)
@@ -33,7 +33,7 @@
       "name": "DankMemerHelper",
       "authors": [{"name": "Ape", "github_username": "Aperre", "twitter_username": "ApeTheMonk", "discord_id": "226677096091484160"}],
       "description": "Adds Features That will help you with Dank Memer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "github": "https://github.com/Aperre/BetterDiscord",
       "github_raw": "https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js"
     },
