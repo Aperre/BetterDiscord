@@ -3,7 +3,7 @@
  * @displayName DankMemerHelper
  * @source https://raw.githubusercontent.com/Aperre/BetterDiscord/master/DankMemerAddon.plugin.js
  * @authorId 547077385225502736
- * @version 1Beta
+ * @version test
  */
  /*@cc_on
  @if (@_jscript)
@@ -419,7 +419,7 @@
   						})));
   					}), [enabled]);
   					return external_BdApi_React_default().createElement(components_namespaceObject.TooltipContainer, {
-  						text: enabled ? "Typing Enabled" : "Typing Disabled",
+  						text: "DankMemerAddon",
   						position: "top",
   						className: DankButton.Z.DankAddonTooltip
   					}, external_BdApi_React_default().createElement("button", {
