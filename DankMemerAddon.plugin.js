@@ -383,25 +383,25 @@
   						id: "beg",
   						label: "Beg",
   						action: () => {
-  							ZLibrary.DiscordAPI.channels.find(channel.id).sendMessage("pls beg")
+  							channel.sendMessage("pls beg")
   						}
   					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
   						id: "search",
   						label: "Search",
   						action: () => {
-  							ZLibrary.DiscordAPI.currentChannel.sendMessage("pls search")
+  							channel.sendMessage("pls search")
   						}
   					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
   						id: "fish",
   						label: "Fish",
   						action: () => {
-  							ZLibrary.DiscordAPI.currentChannel.sendMessage("pls fish")
+  							channel.sendMessage("pls fish")
   						}
   					}), external_BdApi_React_default().createElement(contextmenu_namespaceObject.MenuItem, {
   						id: "postmeme",
   						label: "Post Meme",
   						action: () => {
-  							ZLibrary.DiscordAPI.currentChannel.sendMessage("pls pm")
+  							channel.sendMessage("pls pm")
   						}
   					}));
   				}
